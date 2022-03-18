@@ -1,0 +1,118 @@
+#wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.logo__inner {
+	padding: 15px 25px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo__link {
+	border-right: 2px solid #000;
+	padding: 2px 10px;
+	color: #005aa8;
+	font-size: 15px;
+}
+
+.logo__link:last-child{
+	border-right: 2px solid transparent;
+}
+
+.logo__list {
+	margin-right: 15px;
+}
+
+.logo__second {
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.logo__country {
+	margin-top: 25px;
+}
+
+.logo__country-item {
+	margin: 0 3px;
+}
+
+.logo__main {
+	display: flex;
+	align-items: center;
+}
+
+#site-name {
+	/* TODO: font-family: 'Segoe UI'; */
+	font-size: 28px;
+	color: #1a3051;
+	margin-left: 20px;
+	font-weight: 400;
+}
+
+.header{
+	background: #1a3051;
+}
+
+.header__inner{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 9px 40px;
+}
+
+.header__link{
+	color: #fff;
+	font-size: 15px;
+	padding: 0 5px;
+}
+
+.header__input-item{
+	padding: 8px;
+	min-width: 210px;
+}
+
+.main__content{
+
+}
+
+.main__nav{
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+	margin-left: 20px;
+	border-bottom: 0.2px solid grey;
+	width: 320px;
+	padding-bottom: 5px;
+}
+
+.main__nav-link{
+	color:#005aa8;
+	font-size: 15px;
+}
+
+.main__simbol{
+	padding: 0px 5px;
+}
+
+.main__text{
+	font-size: 15px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #1a3051;
+}
