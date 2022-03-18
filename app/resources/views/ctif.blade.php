@@ -37,18 +37,21 @@
 	<header class="header">
 		<div id="wrapper">
 			<div class="header__inner">
-				<div class="header__list">
-					<a href="#" class="header__link">Despre Minister</a>
-					<a href="#" class="header__link">Legislatie</a>
-					<a href="#" class="header__link">Transparenta decizionala</a>
-					<a href="#" class="header__link">Media</a>
-					<a href="#" class="header__link">Finantele publice locale</a>
-					<a href="#" class="header__link">Asistenta externa</a>
-					<a href="#" class="header__link">Cariere</a>
+				<div class="header__menu">
+					<ul>
+						<li><a href="#" class="header__link">Despre Minister</a></li>
+						<li><a href="#" class="header__link">Legislatie</a></li>
+						<li><a href="#" class="header__link">Transparenta decizionala</a></li>
+						<li><a href="#" class="header__link">Media</a></li>
+						<li><a href="#" class="header__link">Finantele publice locale</a></li>
+						<li><a href="#" class="header__link">Asistenta externa</a></li>
+						<li><a href="#" class="header__link">Cariere</a></li>
+					</ul>
 				</div>
-				<div class="header__input">
+				<form class="header__input">
 					<input class="header__input-item" type="text">
-				</div>
+					<button type="submit"></button>
+				</form>
 				<div class="header__social">
 					<img src="{{ asset('img/facebook-gray.png') }}" alt="">
 					<img src="{{ asset('img/youtube-gray.png') }}" alt="">
@@ -62,7 +65,7 @@
 		<div id="wrapper">
 			<div class="main__content">
 				<div class="main__nav">
-					<a href="https://mf.gov.md/ro" class="main__nav-link">Acasa</a><p class="main__simbol">»</p><p class="main__text"> Generarea codului IBAN pentru încasări</p>
+					<a href="https://mf.gov.md/ro" class="main__nav-link">Acasa</a><p class="main__symbol">»</p><p class="main__text"> Generarea codului IBAN pentru încasări</p>
 				</div>
 
 			</div>

@@ -60,33 +60,30 @@ a:hover {
 	font-weight: 400;
 }
 
-.header{
+.header {
 	background: #1a3051;
 }
 
-.header__inner{
+.header__inner {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 9px 40px;
+	margin: 20px 25px;
 }
 
-.header__link{
+.header__link {
 	color: #fff;
 	font-size: 15px;
 	padding: 0 5px;
 }
 
-.header__input-item{
-	padding: 8px;
+.header__input-item {
+	height: 35px;
 	min-width: 210px;
+	box-shadow: inset 0 2px 4px -1px rgba(0, 0, 0, 0.6);
 }
 
-.main__content{
-
-}
-
-.main__nav{
+.main__nav {
 	display: flex;
 	margin-top: 20px;
 	align-items: center;
@@ -96,16 +93,16 @@ a:hover {
 	padding-bottom: 5px;
 }
 
-.main__nav-link{
+.main__nav-link {
 	color:#005aa8;
 	font-size: 15px;
 }
 
-.main__simbol{
+.main__symbol {
 	padding: 0px 5px;
 }
 
-.main__text{
+.main__text {
 	font-size: 15px;
 }
 
@@ -115,4 +112,26 @@ a:hover {
 	left: 0;
 	right: 0;
 	background-color: #1a3051;
+}
+
+.header__menu{
+	text-align: center;
+}
+
+.header__menu ul {
+	display: flex;
+}
+
+.header__menu > ul li a {
+	display: block;
+	padding: 20px 10px 20px 10px;
+}
+
+.header__menu > ul li {
+	position: relative;
+}
+
+.header__menu ul li:hover{
+	background: #b6b6b6;
+	background: linear-gradient(to bottom, #354966 0%,#1a3051 100%);
 }
