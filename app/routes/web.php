@@ -14,4 +14,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'ctif');
-Route::view('/test', 'test');
