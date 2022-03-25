@@ -15,8 +15,11 @@ class CreateLocalitiesTable extends Migration
     {
         Schema::create('localities', function (Blueprint $table) {
             $table->id();
-            $table->integer('district_code');
-            $table->integer('code');
+
+            # string() для того, чтобы не обрезало нули в начале кода.
+            $table->string('district_code')->nullable();
+            $table->string('code');
+
             $table->string('name');
         });
     }
