@@ -21,7 +21,7 @@ class EcoCodeSeeder extends Seeder
         for ($i = 0; $i != sizeof($ecos); $i++)
         {
             # trim string (varchar = 255).
-            $cs[$i]['label'] = substr($ecos[$i]['label'], 0, 255);
+            $ecos[$i]['label'] = substr($ecos[$i]['label'], 0, 255);
             $data[] = [
                 'code' => $ecos[$i]['code'],
                 'label' => $ecos[$i]['label'],

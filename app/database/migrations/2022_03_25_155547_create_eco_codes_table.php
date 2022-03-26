@@ -13,6 +13,7 @@ class CreateEcoCodesTable extends Migration
      */
     public function up()
     {
+        # TODO: 'code' может быть уникальным, нет нужды в id().
         Schema::create('eco_codes', function (Blueprint $table) {
             $table->id();
             $table->integer('code');

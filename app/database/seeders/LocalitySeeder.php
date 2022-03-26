@@ -21,13 +21,17 @@ class LocalitySeeder extends Seeder
         for ($i = 0; $i != sizeof($localities); $i++)
         {
             $data[] = [
-                'district_code' => $localities[$i]['parent_cdc'] ? $localities[$i]['parent_cdc'] : NULL,
-                'code' => $localities[$i]['cdc'],
-                'name' => $localities[$i]['name']
+                # district_code должен совпадать с одной из записей в `districts`, в csv-файле (locality.csv) такого условия не соблюдается.
+                # TODO: переписать валидный список населенных пунктов из mf.gov.md/ro/iban в новый csv-файл.
+
+                # 'district_code' => $localities[$i]['parent_cdc'] ? (integer)$localities[$i]['parent_cdc'] : 100,
+                'district_code' => 100, # временно любой из населенных пунктов будет относится к districts.Chisinau.
+                'code' => (integer)$localities[$i]['cdc'],
+                'name' => "'" . $localities[$i]['name'] . "'"
             ];
         }
 
-        dump($data);
+        // dump($data);
         DB::table('localities')->insert($data);
     }
     public function csvToArray($filename = '', $delimiter = ',')

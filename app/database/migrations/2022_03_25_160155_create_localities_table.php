@@ -14,13 +14,12 @@ class CreateLocalitiesTable extends Migration
     public function up()
     {
         Schema::create('localities', function (Blueprint $table) {
-            $table->id();
-
-            # string() для того, чтобы не обрезало нули в начале кода.
-            $table->string('district_code')->nullable();
-            $table->string('code');
-
+            $table->id('code');
+            $table->integer('district_code')->index();
             $table->string('name');
+
+            # создаём внешний ключ для district_code, связываем с districts.code.
+            $table->foreign('district_code')->references('code')->on('districts');
         });
     }
 
