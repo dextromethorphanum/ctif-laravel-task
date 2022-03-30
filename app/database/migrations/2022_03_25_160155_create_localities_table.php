@@ -30,6 +30,7 @@ class CreateLocalitiesTable extends Migration
      */
     public function down()
     {
+        # TODO: drop foreign key.
         Schema::dropIfExists('localities');
     }
 }
