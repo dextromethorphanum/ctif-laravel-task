@@ -135,3 +135,115 @@ a:hover {
 	background: #b6b6b6;
 	background: linear-gradient(to bottom, #354966 0%,#1a3051 100%);
 }
+
+.iban_form button {
+	margin-left:156px;
+}
+
+.iban_form label {
+    width: 150px;
+    margin-top: 3px;
+    display: inline-block;
+    float: left;
+    padding: 3px;
+}
+
+.iban_form ul {
+    width: 700px;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iban_form li {
+    padding: 12px 30px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.iban_form li:first-child, .iban_form li:last-child {
+    border-bottom: 1px solid #777;
+}
+
+button.submit {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 11px 25px;
+    background-color: #1a4d9a;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #003580;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	width: 310px;
+}
+button.submit:hover {
+
+	cursor: pointer; 
+	background-color: #003580;
+}
+button.submit:active {
+	border: 1px solid #20911e;
+	box-shadow: 0 0 10px 5px #356b0b inset; 
+	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+	-moz-box-shadow: 0 0 10px 5px #356b0b inset;
+	-ms-box-shadow: 0 0 10px 5px #356b0b inset;
+	-o-box-shadow: 0 0 10px 5px #356b0b inset;
+	
+}
+
+.kms{
+    margin: 30px 0px 0px 18px;
+    font-size: 14px;
+    padding: 2px 32px;
+    background: rgba(16, 218, 0, 0.26);
+    border: 1px solid #5CD200;
+    width: 616px;
+    font-family: georgia;
+}
+	
+.kms2{
+    display: inline-block;
+    padding-left: 95px;
+    font-size: 19px;
+    font-family: initial;
+}
+
+.kms3{  
+	width: 750px;
+	padding: 0 0 0 10px; 
+	border-bottom: 1px solid #eee;
+	margin: 0 0 -10px 0px;
+}  
+	
+.error_iban{
+	margin: 30px 0px 0px 18px;
+	font-size: 15px;
+	padding: 2px 0;
+	background: #fcc;
+	color: #200;
+	width: 680px;
+	border: 1px solid #d77;
+    text-align: center;
+}
+
+.dcsv {
+    background: url(../img/csv.png);
+    height: 42px;
+    width: 38px;
+    display: inline-block;
+	margin: -10px -25px 0 0;
+    float: right;
+	cursor:pointer;
+}
+.dcsv:hover  {
+    background: url(../img/csv-h.png);
+}
