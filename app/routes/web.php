@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IBANController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,5 +13,14 @@ use App\Http\Controllers\IBANController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/ctif', [IBANController::class, 'index']);
 
-Route::get('/', [IBANController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
