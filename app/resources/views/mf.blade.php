@@ -1,4 +1,4 @@
-@extends('layouts.ctifbase')
+@extends('layouts.mfbase')
 @section('page_title', 'Generarea codului IBAN pentru încasări')
 
 @section('content')

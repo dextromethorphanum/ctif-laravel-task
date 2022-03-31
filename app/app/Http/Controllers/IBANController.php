@@ -16,11 +16,10 @@ class IBANController extends Controller
      */
     public function index()
     {
-        return view('ctif', [
+        return view('mf', [
             'data_eco_codes' => EcoCode::all(),
             'data_districts' => District::all()
         ]);
-        
     }
 
     /**
