@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EcoCodeSeeder::class,
             DistrictSeeder::class,
-            LocalitySeeder::class
+            LocalitySeeder::class,
+            RoleSeeder::class
         ], true);
     }
 }
