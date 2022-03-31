@@ -27,7 +27,7 @@ class LocalitySeeder extends Seeder
                 # 'district_code' => $localities[$i]['parent_cdc'] ? (integer)$localities[$i]['parent_cdc'] : 100,
                 'district_code' => 100, # временно любой из населенных пунктов будет относится к districts.Chisinau.
                 'code' => (integer)$localities[$i]['cdc'],
-                'name' => "'" . $localities[$i]['name'] . "'"
+                'name' => $localities[$i]['name']
             ];
         }
 
