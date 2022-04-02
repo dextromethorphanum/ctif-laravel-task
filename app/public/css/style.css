@@ -52,6 +52,10 @@ a:hover {
 	text-decoration: none;
 }
 
+#site-name a:visited {
+	color: #1a3051;
+}
+
 .logo__inner {
 	padding: 10px 25px 0px 25px;
 	display: flex;

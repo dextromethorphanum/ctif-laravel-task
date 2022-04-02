@@ -20,9 +20,9 @@
             @section('header')
                 <div class="logo__inner">
                     <div class="logo__main">
-                        <img src="{{ asset('img/logo.png') }}" alt="Guvernul Republicii Moldova" id="logo">
+                        <a href="https://gov.md/"><img src="{{ asset('img/logo.png') }}" alt="Guvernul Republicii Moldova" id="logo"></a>
                         <h2 id="site-name">
-                            Ministerul Finanțelor
+                            <a href="{{ url('/') }}">Ministerul Finanțelor</a>
                         </h2>
                     </div>
                     <div class="logo__second">
