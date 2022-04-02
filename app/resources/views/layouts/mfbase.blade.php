@@ -24,9 +24,11 @@
                     </div>
                     <div class="logo__second">
                         <div class="logo__list">
-                            <a href="#" class="logo__link">Acasă</a>
+                            <a href="{{ url('/') }}" class="logo__link">Acasă</a>
                             <a href="#" class="logo__link">Programul ”Prima Casă”</a>
                             <a href="#" class="logo__link">Contacte</a>
+                            @section('auth-link')
+                            @show
                         </div>
                         <div class="logo__country">
                             <img class="logo__country-item" src="{{ asset('img/flags/md.png') }}" alt="">
@@ -73,13 +75,14 @@
             @section('content')
                 <div class="main__content">
                     <div class="main__nav">
-                        <a href="https://mf.gov.md/ro" class="main__nav-link">Acasa</a><p class="main__symbol">»</p><p class="main__text">@yield('page_title', 'Unnamed page')</p>
+                        <a href="{{ route('admin.index') }}" class="main__nav-link">Acasă</a><p class="main__symbol">»</p><p class="main__text">@yield('page_title', 'Unnamed page')</p>
                     </div>
                 </div>
             @show
         </div>
     </div>
 
+    @section('footer-included')
     <footer class="footer">
         <div class="wrapper footer__wrapper">
             @section('footer')
@@ -87,8 +90,9 @@
             @show
         </div>
     </footer>
+    @show
 
-    @section('footer_scripts')
+    @section('footer-scripts')
         <script>
             var kdEco = '' ;
             var kdRaion = '' ;

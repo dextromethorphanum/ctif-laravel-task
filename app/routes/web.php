@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IBANController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IBANController::class, 'index']);
-Route::view('/admin', 'admin')->middleware('auth');
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::view('/', 'admin.index')->name('index');
+    Route::view('/create-user', 'admin.create-user')->name('create-user');
+    Route::view('/roles-management', 'admin.roles-management')->name('roles-management');
+    Route::view('/ibans-management', 'admin.ibans-management')->name('ibans-management');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/logout', [LoginController::class, 'logout']);
 require __DIR__.'/auth.php';
