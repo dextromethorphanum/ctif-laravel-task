@@ -358,8 +358,8 @@ audio,
 iframe,
 embed,
 object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
+  /* display: block; 1 */
+  /* vertical-align: middle; 2 */
 }
 
 /*
@@ -1434,4 +1434,3 @@ select {
     padding-right: 2rem;
   }
 }
-
