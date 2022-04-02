@@ -1,19 +1,28 @@
-#wrapper {
+.wrapper {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1300px;
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
+body .main{
+	background: #fff url(../img/main-gradient.png) repeat-x top;
+}
+
 a:hover {
 	text-decoration: none;
 }
 
+.main__last_info a:visited {
+	color: #005aa8;
+	text-decoration: none;
+}
+
 .logo__inner {
-	padding: 15px 25px;
+	padding: 10px 25px 0px 25px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -44,7 +53,7 @@ a:hover {
 }
 
 .logo__country-item {
-	margin: 0 3px;
+	margin: 0 5px;
 }
 
 .logo__main {
@@ -60,7 +69,7 @@ a:hover {
 	font-weight: 400;
 }
 
-.header {
+.navbar {
 	background: #1a3051;
 }
 
@@ -68,7 +77,7 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 20px 25px;
+	margin: 20px 50px;
 }
 
 .header__link {
@@ -78,19 +87,26 @@ a:hover {
 }
 
 .header__input-item {
-	height: 35px;
+	height: 30px;
 	min-width: 210px;
 	box-shadow: inset 0 2px 4px -1px rgba(0, 0, 0, 0.6);
+	background: url(../img/search-icon.png) no-repeat right 0;
+	background-color: #fff;
+	margin-right: -40px;
+	float: right;
+}
+
+.header__social img{
+	margin-right: 5px;
 }
 
 .main__nav {
 	display: flex;
-	margin-top: 20px;
 	align-items: center;
-	margin-left: 20px;
-	border-bottom: 0.2px solid grey;
 	width: 320px;
-	padding-bottom: 5px;
+	margin: 20px 0px 10px 20px;
+	border-bottom: #eee 1px solid;
+	padding-bottom: 10px;
 }
 
 .main__nav-link {
@@ -106,15 +122,25 @@ a:hover {
 	font-size: 15px;
 }
 
+.main__wrapper {
+	background: #fff url(../img/shadow-under-slider.png) repeat-x top;
+	background-color: #fff;
+
+	margin-top: -20px;
+	padding: 5px 20px;
+}
+
 .footer {
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
 	left: 0;
 	right: 0;
 	background-color: #1a3051;
+	height: 150px;
+	padding: 35px 0;
 }
 
-.header__menu{
+.header__menu {
 	text-align: center;
 }
 
@@ -141,15 +167,20 @@ a:hover {
 }
 
 .iban_form label {
-    width: 150px;
+    width: 151px;
     margin-top: 3px;
     display: inline-block;
-    float: left;
     padding: 3px;
 }
 
+.iban_form {
+	display: flex; 
+	justify-content: center;
+	margin-top: 20px;
+}
+
 .iban_form ul {
-    width: 700px;
+	width: 700px;
     list-style-type: none;
     list-style-position: outside;
     margin: 0px;
@@ -157,9 +188,9 @@ a:hover {
 }
 
 .iban_form li {
-    padding: 12px 30px;
     border-bottom: 1px solid #eee;
     position: relative;
+    padding: 12px 30px;
 }
 
 .iban_form li:first-child, .iban_form li:last-child {

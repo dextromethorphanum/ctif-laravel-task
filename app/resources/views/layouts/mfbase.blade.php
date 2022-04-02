@@ -12,9 +12,9 @@
     @show
 </head>
 <body>
-    @section('header')
-        <div class="logo">
-            <div id="wrapper">
+    <div class="main__header">
+        <div class="wrapper">
+            @section('header')
                 <div class="logo__inner">
                     <div class="logo__main">
                         <img src="{{ asset('img/logo.png') }}" alt="Guvernul Republicii Moldova" id="logo">
@@ -35,56 +35,58 @@
                         </div>
                     </div>
                 </div>
+            @show
+        </div>
+        <div class="navbar">
+            <div class="wrapper">
+                @section('navbar')
+                    <div class="header__inner">
+                        <div class="header__menu">
+                            <ul>
+                                <li><a href="#" class="header__link">Despre Minister</a></li>
+                                <li><a href="#" class="header__link">Legislatie</a></li>
+                                <li><a href="#" class="header__link">Transparenta decizionala</a></li>
+                                <li><a href="#" class="header__link">Media</a></li>
+                                <li><a href="#" class="header__link">Finantele publice locale</a></li>
+                                <li><a href="#" class="header__link">Asistenta externa</a></li>
+                                <li><a href="#" class="header__link">Cariere</a></li>
+                            </ul>
+                        </div>
+                        <form class="header__input">
+                            <input class="header__input-item" type="text">
+                            <button type="submit"></button>
+                        </form>
+                        <div class="header__social">
+                            <img src="{{ asset('img/facebook-gray.png') }}" alt="">
+                            <img src="{{ asset('img/youtube-gray.png') }}" alt="">
+                            <img src="{{ asset('img/rss-gray.png') }}" alt="">
+                        </div>
+                    </div>
+                @show
             </div>
         </div>
+    </div>
 
-        <header class="header">
-            <div id="wrapper">
-                <div class="header__inner">
-                    <div class="header__menu">
-                        <ul>
-                            <li><a href="#" class="header__link">Despre Minister</a></li>
-                            <li><a href="#" class="header__link">Legislatie</a></li>
-                            <li><a href="#" class="header__link">Transparenta decizionala</a></li>
-                            <li><a href="#" class="header__link">Media</a></li>
-                            <li><a href="#" class="header__link">Finantele publice locale</a></li>
-                            <li><a href="#" class="header__link">Asistenta externa</a></li>
-                            <li><a href="#" class="header__link">Cariere</a></li>
-                        </ul>
-                    </div>
-                    <form class="header__input">
-                        <input class="header__input-item" type="text">
-                        <button type="submit"></button>
-                    </form>
-                    <div class="header__social">
-                        <img src="{{ asset('img/facebook-gray.png') }}" alt="">
-                        <img src="{{ asset('img/youtube-gray.png') }}" alt="">
-                        <img src="{{ asset('img/rss-gray.png') }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </header>
-    @show
 
-    @section('content')
-        <div class="main">
-            <div id="wrapper">
+    <div class="main">
+        <div class="wrapper main__wrapper">
+            @section('content')
                 <div class="main__content">
                     <div class="main__nav">
                         <a href="https://mf.gov.md/ro" class="main__nav-link">Acasa</a><p class="main__symbol">»</p><p class="main__text">@yield('page_title', 'Unnamed page')</p>
                     </div>
                 </div>
-            </div>
+            @show
         </div>
-    @show
+    </div>
 
-    @section('footer')
-        <footer class="footer">
-            <div id="wrapper">
+    <footer class="footer">
+        <div class="wrapper footer__wrapper">
+            @section('footer')
 
-            </div>
-        </footer>
-    @show
+            @show
+        </div>
+    </footer>
 
     @section('footer_scripts')
         <script>

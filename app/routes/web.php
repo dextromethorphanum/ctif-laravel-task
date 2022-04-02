@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/mf', [IBANController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IBANController::class, 'index']);
+Route::view('/admin', 'admin')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

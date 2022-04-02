@@ -3,7 +3,6 @@
 
 @section('content')
 	@parent
-	<div class="rtecenter">
 		<form class="iban_form" action="/iban" method="post" name="iban_form">
 			<ul>
 				<li>
@@ -59,5 +58,16 @@
 			</ul>
 		</form>
 		<div id="iban-placeholder"> </div>
-	</div>
+		<div class="main__last_info">
+			<center style="margin: 40px 0px 0 0;">
+			<a href="https://mf.gov.md/sites/default/files/Ord%20153_27.12.2021_Modul%20de%20Incasare%20a%202022_modificat.pdf" target="_blank">
+				Ordinul nr. 153 din 27.12.2021 cu privire la modul de achitare şi evidență a plăților la bugetul public naţional prin sistemul trezorerial al Ministerului Finanţelor în anul 2022
+				</a>
+			</center>
+			<p>&nbsp;</p>
+			<center style="margin: 0px 0px 40px 0;">
+				<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="340" src="{{ asset('stuff/XbXr7tTM7Dw._html') }}" width="620"></iframe>
+			</center>
+			<p>&nbsp;</p>
+		</div>
 @endsection
