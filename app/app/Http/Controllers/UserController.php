@@ -39,7 +39,7 @@ class UserController extends Controller
         $new_user = User::create($request->except(['_token', 'roles']));
         $new_user->roles()->sync($request->roles);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('message-success', "You are successful created an user '{$request->input('name')}'.");
     }
 
     /**

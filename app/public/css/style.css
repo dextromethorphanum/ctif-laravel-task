@@ -56,6 +56,27 @@ a:hover {
 	color: #1a3051;
 }
 
+.alert {
+	padding: 20px;
+	color: white;
+	margin-bottom: 15px;
+	font-family: 'Segoe UI', sans-serif;
+	border: 1px solid #666;
+	box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.alert-success {
+	background-color: #7eec18;
+}
+
+.alert-info {
+	background-color: #ffea2a;
+}
+
+.alert-error {
+	background-color: #f82d2d;
+}
+
 .logo__inner {
 	padding: 10px 25px 0px 25px;
 	display: flex;
@@ -305,7 +326,6 @@ button.submit:active {
     background: url(../img/csv.png);
     height: 42px;
     width: 38px;
-    display: inline-block;
 	margin: -10px -25px 0 0;
     float: right;
 	cursor:pointer;
