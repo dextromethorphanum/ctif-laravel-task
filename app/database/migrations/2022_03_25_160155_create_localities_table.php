@@ -30,7 +30,10 @@ class CreateLocalitiesTable extends Migration
      */
     public function down()
     {
-        # TODO: drop foreign key.
+        Schema::table('localities', function (Blueprint $table) {
+            $table->dropForeign('localities_district_code_foreign');
+        });
+
         Schema::dropIfExists('localities');
     }
 }
