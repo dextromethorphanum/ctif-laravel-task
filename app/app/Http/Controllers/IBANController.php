@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\IBAN;
 use App\Models\EcoCode;
 use App\Models\District;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IBANController extends Controller
 {
@@ -18,7 +20,8 @@ class IBANController extends Controller
     {
         return view('mf', [
             'data_eco_codes' => EcoCode::all(),
-            'data_districts' => District::all()
+            'data_districts' => District::all(),
+            'is_admin' => Auth::check() ? (new User)->find(Auth::id())->hasRole('admin') : null
         ]);
     }
 

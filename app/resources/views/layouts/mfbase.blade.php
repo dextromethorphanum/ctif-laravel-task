@@ -30,8 +30,18 @@
                             <a href="{{ url('/') }}" class="logo__link">Acasă</a>
                             <a href="#" class="logo__link">Programul ”Prima Casă”</a>
                             <a href="#" class="logo__link">Contacte</a>
+
                             @section('auth-link')
+                                <a href="{{ route('logout') }}" class="logo__link">Log out</a>
                             @show
+                            @section('apanel-link')
+                                @isset($is_admin)
+                                    @if($is_admin)
+                                        <a href="{{ route('admin.index') }}" class="logo__link">Admin</a>
+                                    @endif
+                                @endisset
+                            @show
+
                         </div>
                         <div class="logo__country">
                             <img class="logo__country-item" src="{{ asset('img/flags/md.png') }}" alt="">

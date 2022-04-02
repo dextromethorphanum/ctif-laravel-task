@@ -1,5 +1,6 @@
 @extends('layouts.mfbase')
 @section('page_title', 'Generarea codului IBAN pentru încasări')
+@section('auth-link', '')
 
 @section('content')
 	@parent
