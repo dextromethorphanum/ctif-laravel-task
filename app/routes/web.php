@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\IBANController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IBANController::class, 'index']);
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'auth.isAdmin'])->group(function () {
+    Route::resource('/users', UserController::class);
+
     Route::view('/', 'admin.index')->name('index');
     Route::view('/create-user', 'admin.create-user')->name('create-user');
     Route::view('/roles-management', 'admin.roles-management')->name('roles-management');
