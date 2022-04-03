@@ -1,6 +1,5 @@
 var $jq = jQuery.noConflict();
 $jq(document).ready(function() {
-		
 	$jq("#iban-export").on('click', function() {
 		var budget_year = $jq("[name=anul]").val();
 		window.location = "export.php?anul="+budget_year;
@@ -11,16 +10,16 @@ $jq(document).ready(function() {
 		$jq("#iban-placeholder").html("");
 		var formData = $jq(this).serialize();
 		formData += "&getiban=1";
-			$jq.ajax({
-				type: "POST",
-				url: "../php/ibanAPI.php",
-				data: formData,
-				dataType:'TEXT',
-				success: function(data){
-					$jq("#iban-placeholder").html(data);
-					$jq('.spoiler-body').hide();
-				}
-			});
+		$jq.ajax({
+			type: "POST",
+			url: "../php/ibanAPI.php",
+			data: formData,
+			dataType: 'TEXT',
+			success: function(data){
+				$jq("#iban-placeholder").html(data);
+				$jq('.spoiler-body').hide();
+			}
+		});
 	});
 		
 	$jq('.spoiler-body').hide();

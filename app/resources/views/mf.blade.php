@@ -58,7 +58,7 @@
 				</li>
 			</ul>
 		</form>
-		<div id="iban-placeholder"> </div>
+		<center><div id="iban-placeholder"></div></center>
 		<div class="main__last_info">
 			<center style="margin: 40px 0px 0 0;">
 			<a href="https://mf.gov.md/sites/default/files/Ord%20153_27.12.2021_Modul%20de%20Incasare%20a%202022_modificat.pdf" target="_blank">
