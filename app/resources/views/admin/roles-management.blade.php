@@ -34,7 +34,7 @@
                     <th>{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>?</td>
+                    <td>{{ implode(', ', $user->roles->pluck('role_name')->toArray()); }}</td>
                     <td><a class="s__btn" href="{{ route('admin.users.edit', $user->id) }}" role="button">Edit roles</a></td>
                 </tr>
             @endforeach

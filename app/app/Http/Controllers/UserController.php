@@ -16,8 +16,7 @@ class UserController extends Controller
     public function index()
     {
         return view('admin.roles-management', [
-            'users' => User::all(),
-            'roles' => Role::all()
+            'users' => User::all()
         ]);
     }
 
