@@ -15,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.roles-management', [
+            'users' => User::all(),
+            'roles' => Role::all()
+        ]);
     }
 
     /**
@@ -61,7 +64,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.edit-user', [
+            'roles' => Role::all(),
+            'user' => User::find($id)
+        ]);
     }
 
     /**
@@ -73,7 +79,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->update($request->except(['_token', 'roles']));
+        $user->roles()->sync(isset($request->roles) ? array_merge($request->roles, ['1']) : ['1']);
+
+        return redirect()->route('admin.roles-management');
     }
 
     /**

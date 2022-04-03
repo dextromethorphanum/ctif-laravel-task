@@ -184,6 +184,7 @@ a:hover {
 
 	margin-top: -20px;
 	padding: 5px 20px;
+	min-height: calc(100vh - 170px);
 }
 
 .footer {
@@ -332,4 +333,61 @@ button.submit:active {
 }
 .dcsv:hover  {
     background: url(../img/csv-h.png);
+}
+
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+input[type="checkbox"]:disabled {
+    border-color: #eee;
+	pointer-events: none;
+    background: rgb(226, 73, 73);
+}
+
+.s__btn {
+	box-sizing: border-box;
+	appearance: none;
+	background-color: transparent;
+	border: 2px solid #5dd6a4;
+	border-radius: 0.6em;
+	color: #5dd6a4;
+	cursor: pointer;
+	line-height: 1;
+	/* margin: 20px; */
+	padding: 0.3em 0.4em;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
 }

@@ -23,7 +23,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'auth.isAdmin'])->gr
 
     Route::view('/', 'admin.index')->name('index');
     Route::view('/create-user', 'admin.create-user')->name('create-user');
-    Route::view('/roles-management', 'admin.roles-management')->name('roles-management');
+    Route::get('/roles-management', [UserController::class, 'index'])->name('roles-management');
     Route::view('/ibans-management', 'admin.ibans-management')->name('ibans-management');
 });
 
