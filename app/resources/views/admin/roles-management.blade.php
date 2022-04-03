@@ -3,6 +3,21 @@
 
 @section('content')
     @parent
+
+    @if(session()->has('message-success'))
+        <div class="alert alert-success">
+            {{ session()->get('message-success') }}
+        </div>
+    @elseif(session()->has('message-error'))
+        <div class="alert alert-error">
+            <b>{{ session()->get('message-error') }}</b>
+        </div>
+    @elseif(session()->has('message-info'))
+        <div class="alert alert-info">
+            {{ session()->get('message-info') }}
+        </div>
+    @endif
+
     <table class="styled-table">
         <thead>
             <tr>

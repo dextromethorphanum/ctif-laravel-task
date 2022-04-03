@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class IBAN extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+    protected $table = 'iban_codes';
+    protected $fillable = [
+        '_method',
+        'code',
+        'locality_code'
+    ];
 }

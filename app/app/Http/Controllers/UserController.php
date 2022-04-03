@@ -42,7 +42,7 @@ class UserController extends Controller
         $new_user = User::create($request->except(['_token', 'roles']));
         $new_user->roles()->sync($request->roles);
 
-        return redirect()->route('admin.index')->with('message-success', "You are successful created an user '{$request->input('name')}'.");
+        return redirect()->route('admin.roles-management')->with('message-success', "You are successful created an user '{$request->input('name')}'.");
     }
 
     /**
@@ -64,7 +64,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.edit-user', [
+        return view('admin.users.edit', [
             'roles' => Role::all(),
             'user' => User::find($id)
         ]);
@@ -84,7 +84,7 @@ class UserController extends Controller
         $user->update($request->except(['_token', 'roles']));
         $user->roles()->sync(isset($request->roles) ? array_merge($request->roles, ['1']) : ['1']);
 
-        return redirect()->route('admin.roles-management');
+        return redirect()->route('admin.roles-management')->with('message-success', "You are successful updated an user '{$user->name}'.");
     }
 
     /**

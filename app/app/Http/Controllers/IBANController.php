@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EcoCode;
 use App\Models\IBAN;
+use App\Models\Locality;
 use Illuminate\Http\Request;
 
 class IBANController extends Controller
@@ -14,7 +16,9 @@ class IBANController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.ibans-management', [
+            'ibans' => IBAN::all(),
+        ]);
     }
 
     /**
@@ -24,7 +28,11 @@ class IBANController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.ibans.create', [
+            'ibans' => IBAN::all(),
+            'localities' => Locality::all(),
+            'eco_codes' => EcoCode::all()
+        ]);
     }
 
     /**
@@ -35,7 +43,8 @@ class IBANController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        IBAN::create($request->except(['_token']));
+        return redirect()->route('admin.ibans-management')->with('message-success', "You are successful created an IBAN code '{$request->code}'.");
     }
 
     /**
@@ -55,9 +64,13 @@ class IBANController extends Controller
      * @param  \App\Models\IBAN  $iBAN
      * @return \Illuminate\Http\Response
      */
-    public function edit(IBAN $iBAN)
+    public function edit($iban_id)
     {
-        //
+        return view('admin.ibans.edit', [
+            'iban' => IBAN::find($iban_id),
+            'localities' => Locality::all(),
+            'eco_codes' => EcoCode::all()
+        ]);
     }
 
     /**
@@ -67,9 +80,12 @@ class IBANController extends Controller
      * @param  \App\Models\IBAN  $iBAN
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, IBAN $iBAN)
+    public function update(Request $request, $iban_id)
     {
-        //
+        $iban = IBAN::findOrFail($iban_id);
+        $iban->update($request->except(['_token', '_method']));
+
+        return redirect()->route('admin.ibans-management')->with('message-success', "You are successful updated an IBAN code '{$request->code}'.");
     }
 
     /**
@@ -78,8 +94,9 @@ class IBANController extends Controller
      * @param  \App\Models\IBAN  $iBAN
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IBAN $iBAN)
+    public function destroy($iban_id)
     {
-        //
+        IBAN::destroy($iban_id);
+        return redirect()->route('admin.ibans-management')->with('message-success', "You are successful deleted an IBAN code (id: {$iban_id}).");
     }
 }
