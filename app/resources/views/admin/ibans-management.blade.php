@@ -25,6 +25,7 @@
             <tr>
                 <th>#</th>
                 <th>Locality code</th>
+                <th>Eco-code</th>
                 <th>IBAN Code</th>
                 <th>Action</th>
             </tr>
@@ -34,6 +35,7 @@
                 <tr>
                     <td><b>{{ $iban->id }}</b></td>
                     <td>{{ $iban->locality_code }}</td>
+                    <td>{{ $iban->eco_code }}</td>
                     <td>{{ $iban->code }}</td>
                     <td>
                         <a class="s__btn" href="{{ route('admin.ibans.edit', $iban->id) }}" role="button">Edit</a>

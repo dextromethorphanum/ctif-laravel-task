@@ -30,7 +30,7 @@
 
             <!-- Localities -->
             <div>
-                <x-label for="locality" :value="__('Locality')" class="block mt-4"/>
+                <x-label for="locality_code" :value="__('Locality')" class="block mt-4"/>
 
                 <select name="locality_code" style="width: 600px;">
                     @foreach ($localities as $locality)

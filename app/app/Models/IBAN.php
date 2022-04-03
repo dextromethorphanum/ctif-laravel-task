@@ -14,6 +14,7 @@ class IBAN extends Model
     protected $fillable = [
         '_method',
         'code',
+        'eco_code',
         'locality_code'
     ];
 }

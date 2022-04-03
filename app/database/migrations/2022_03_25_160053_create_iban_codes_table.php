@@ -16,7 +16,10 @@ class CreateIbanCodesTable extends Migration
         Schema::create('iban_codes', function (Blueprint $table) {
             $table->id();
             $table->integer('locality_code');
+            $table->integer('eco_code')->index();
             $table->string('code', 24);
+
+            $table->foreign('eco_code')->references('code')->on('eco_codes');
         });
     }
 
@@ -27,6 +30,10 @@ class CreateIbanCodesTable extends Migration
      */
     public function down()
     {
+        Schema::table('iban_codes', function (Blueprint $table) {
+            $table->dropForeign('iban_codes_eco_code_foreign');
+        });
+
         Schema::dropIfExists('iban_codes');
     }
 }
