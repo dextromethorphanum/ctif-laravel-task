@@ -12,8 +12,13 @@ class IndexController extends Controller
     public function index()
     {
         $user = new User();
-        $user = $user->find(Auth::id());
-        $operator_raion_code = $user->getIdOfDistrictOperator($user->id);
+        $operator_raion_code = null;
+
+        if(Auth::check())
+        {
+            $user = $user->find(Auth::id());
+            $operator_raion_code = $user->getIdOfDistrictOperator($user->id);
+        }
 
         return view('mf', [
             'operator_raion' => $operator_raion_code,

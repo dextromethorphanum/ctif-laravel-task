@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             EcoCodeSeeder::class,
             DistrictSeeder::class,
             LocalitySeeder::class,
-            RoleSeeder::class
+            RoleSeeder::class,
+            UserSeeder::class
         ], true);
     }
 }
