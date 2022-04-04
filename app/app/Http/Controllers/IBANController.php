@@ -5,7 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\EcoCode;
 use App\Models\IBAN;
 use App\Models\Locality;
+use App\Rules\UpperCase;
+use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Validator as IlluminateValidationValidator;
+use Nette\Utils\Validators;
+use Symfony\Component\HttpKernel\EventListener\ValidateRequestListener;
 
 class IBANController extends Controller
 {
@@ -43,6 +52,9 @@ class IBANController extends Controller
      */
     public function store(Request $request)
     {
+        if($this->validateCode($request))
+            return redirect()->back()->withErrors(['This IBAN Code already existed.']);
+
         IBAN::create($request->except(['_token']));
         return redirect()->route('admin.ibans-management')->with('message-success', "You are successful created an IBAN code '{$request->code}'.");
     }
@@ -83,6 +95,9 @@ class IBANController extends Controller
     public function update(Request $request, $iban_id)
     {
         $iban = IBAN::findOrFail($iban_id);
+        if($this->validateCode($request))
+            return redirect()->back()->withErrors(['This IBAN Code already existed.']);
+
         $iban->update($request->except(['_token', '_method']));
 
         return redirect()->route('admin.ibans-management')->with('message-success', "You are successful updated an IBAN code '{$request->code}'.");
@@ -98,5 +113,22 @@ class IBANController extends Controller
     {
         IBAN::destroy($iban_id);
         return redirect()->route('admin.ibans-management')->with('message-success', "You are successful deleted an IBAN code (id: {$iban_id}).");
+    }
+
+    public function validateCode($request, $input_name = 'code')
+    {
+        $request->validate([
+            // обязательное поле, строка, длина = 24, uppercase, начинается с 'MD', уникальный.
+            $input_name => ['required', 'string', 'size:24', new UpperCase, 'starts_with:MD'],
+        ]);
+
+        $ret = DB::table('iban_codes')
+            ->where('code', $request->code)
+            ->first();
+
+        if(Str::endsWith(Route::currentRouteAction(), '@update') && $request->code == $ret->code)
+            return false;
+
+        return $ret;
     }
 }
