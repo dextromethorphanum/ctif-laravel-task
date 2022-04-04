@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -65,7 +67,8 @@ class UserController extends Controller
     {
         return view('admin.users.edit', [
             'roles' => Role::all(),
-            'user' => User::find($id)
+            'user' => User::find($id),
+            'districts' => District::all()
         ]);
     }
 
@@ -82,6 +85,11 @@ class UserController extends Controller
 
         $user->update($request->except(['_token', 'roles']));
         $user->roles()->sync(isset($request->roles) ? array_merge($request->roles, ['1']) : ['1']);
+
+        DB::table('user_roles')
+            ->where('user_id', $id)
+            ->where('role_id', $user->getRoleIdByName('operator_raion'))
+            ->update(['additional_code' => $request->district_code]);
 
         return redirect()->route('admin.roles-management')->with('message-success', "You are successful updated an user '{$user->name}'.");
     }

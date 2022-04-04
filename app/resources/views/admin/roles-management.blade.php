@@ -34,7 +34,15 @@
                     <th>{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ implode(', ', $user->roles->pluck('role_name')->toArray()); }}</td>
+                    <td>
+                    @foreach($user->roles->pluck('role_name') as $role_name)
+                        @if($role_name === 'operator_raion')
+                            {{ $role_name }}_{{ $user->getIdOfDistrictOperator($user->id) }}{{ $loop->last ? '' : ',' }}
+                        @else
+                            {{ $role_name }}{{ $loop->last ? '' : ',' }}
+                        @endif
+                    @endforeach
+                    </td>
                     <td><a class="s__btn" href="{{ route('admin.users.edit', $user->id) }}" role="button">Edit roles</a></td>
                 </tr>
             @endforeach
