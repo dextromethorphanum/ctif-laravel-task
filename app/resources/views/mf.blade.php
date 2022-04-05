@@ -67,7 +67,7 @@
 			</center>
 			<p>&nbsp;</p>
 			<center style="margin: 0px 0px 40px 0;">
-				<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="340" src="{{ asset('stuff/XbXr7tTM7Dw._html') }}" width="620"></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/XbXr7tTM7Dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</center>
 			<p>&nbsp;</p>
 		</div>
