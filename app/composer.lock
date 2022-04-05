@@ -1522,7 +1522,6 @@
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
                 "league/mime-type-detection": "^1.3",
                 "php": "^7.2.5 || ^8.0"
             },
@@ -1616,7 +1615,6 @@
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
