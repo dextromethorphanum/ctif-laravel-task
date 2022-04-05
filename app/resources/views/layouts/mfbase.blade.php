@@ -99,7 +99,53 @@
     <footer class="footer">
         <div class="wrapper footer__wrapper">
             @section('footer')
-
+                <div class="footer_blocks">
+                    <div class="footer_block">
+                        <h2 class="footer_block_title">Contacte</h2>
+                        <div class="footer_block_content">
+                            <address>
+                                str. Constantin Tănase 7, mun. Chişinău<br>
+                                MD-2005, Republica Moldova<br>
+                                Tel.: +(373) 22 26 25 23<br>
+                                Email: cancelaria@mf.gov.md<br>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="footer_block">
+                        <a href="https://gov.md/"><img src="{{ asset('img/logo.png') }}" width="50" height="60" alt="Guvernul Republicii Moldova"></a>
+                        <h2 class="footer_block_title">Ministerul Finanțelor</h2>
+                        <div class="footer_block_content">
+                            Drepturi de autor © 2022.<br>
+                            Toate drepturile sunt rezervate.<br>
+                        </div>
+                    </div>
+                    <div class="footer_block">
+                        <h2 class="footer_block_title">Parteneri de dezvoltare</h2>
+                        <div class="footer_block_content">
+                            Uniunea Europeană<br>
+                            Fondul Monetar Internațional<br>
+                            Banca Mondială<br>
+                            Banca Europeană pentru Reconstrucție și Dezvoltare<br>
+                        </div>
+                    </div>
+                    <div class="footer_block">
+                        <h2 class="footer_block_title">Portaluri guvernamentale</h2>
+                        <div class="footer_block_content">
+                            Portalul serviciilor publice<br>
+                            Portalul de participare<br>
+                            Portalul datelor deschise<br>
+                            Registrul actelor juridice<br>
+                            Servicii fiscale electronice<br>
+                        </div>
+                    </div>
+                    <div class="footer_block">
+                        <img src="{{ asset('img/eu_flag_logo.jpg') }}" width="60" height="41">
+                        <div class="footer_block_content">
+                            Acest site a fost reînnoit<br>cu asistența Uniunii Europene
+                        </div>
+                    </div>
+                </div>
+                <span class="old_version_text">Versiunea precedentă a paginii web a Ministerului Finanțelor!</span>
             @show
         </div>
     </footer>

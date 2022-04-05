@@ -118,7 +118,6 @@ a:hover {
 }
 
 #site-name {
-	/* TODO: font-family: 'Segoe UI'; */
 	font-size: 28px;
 	color: #1a3051;
 	margin-left: 20px;
@@ -193,8 +192,64 @@ a:hover {
 	left: 0;
 	right: 0;
 	background-color: #1a3051;
-	height: 150px;
+	height: 200px;
 	padding: 35px 0;
+}
+
+.footer__wrapper {
+	margin-left: 170px;
+}
+
+.footer_block {
+	vertical-align: top;
+	color: white;
+	display: inline-block;
+	float: center;
+	margin-right: 20px;
+	font: inherit;
+	width: 230px;
+}
+
+.footer_block_title {
+	margin-bottom: 9px;
+}
+
+.footer_block_content {
+	font-size: .75em;
+	font-size: 11px;
+	line-height: normal;
+}
+
+.footer_block_content address {
+	font-style: normal;
+}
+
+.footer_block img {
+	float: left;
+	margin-right: 10px;
+}
+
+.old_version_text {
+	display: flex;
+	justify-content: center;
+	color: white;
+	margin-top: 25px;
+	text-decoration: underline;
+	font-size: 13px;
+	letter-spacing: 1px;
+	margin-left: -100px;
+}
+
+.old_version_text {
+	animation: old_version_text 2s alternate-reverse infinite;
+}
+
+@-webkit-keyframes old_version_text {
+	100% { color: rgba(0, 0, 0, 0); }
+}
+
+@keyframes old_version_text {
+	100% { color: rgba(0, 0, 0, 0); }
 }
 
 .header__menu {
