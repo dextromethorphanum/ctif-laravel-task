@@ -45,6 +45,17 @@
                 @endforeach
             </div>
 
+            <!-- Districts -->
+            <div id="districts_div" style="display: none">
+                <x-label for="district" :value="__('District')" class="block mt-4"/>
+
+                <select name="district_code" style="width: 600px;">
+                    @foreach ($districts as $district)
+                        <option value="{{ $district->code }}">{{ $district->code }} — {{ $district->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-4">
                     {{ __('Create') }}
@@ -52,4 +63,9 @@
             </div>
         </form>
     </x-guest-layout>
+@endsection
+
+@section('footer-scripts')
+    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/roles.js') }}"></script>
 @endsection

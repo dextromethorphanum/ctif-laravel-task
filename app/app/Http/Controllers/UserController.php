@@ -29,7 +29,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create', ['roles' => Role::all()]);
+        return view('admin.users.create', [
+            'roles' => Role::all(),
+            'districts' => District::all()
+        ]);
     }
 
     /**
@@ -42,6 +45,10 @@ class UserController extends Controller
     {
         $new_user = User::create($request->except(['_token', 'roles']));
         $new_user->roles()->sync($request->roles);
+        DB::table('user_roles')
+            ->where('user_id', $new_user->id)
+            ->where('role_id', $new_user->getRoleIdByName('operator_raion'))
+            ->update(['additional_code' => $request->district_code]);
 
         return redirect()->route('admin.roles-management')->with('message-success', "You are successful created an user '{$request->input('name')}'.");
     }
