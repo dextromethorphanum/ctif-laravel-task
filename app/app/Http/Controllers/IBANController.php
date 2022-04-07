@@ -112,17 +112,22 @@ class IBANController extends Controller
 
     public function validateCode($request, $input_name = 'code')
     {
+        # validator (check IBAN Code rules).
         $request->validate([
             // обязательное поле, строка, длина = 24, uppercase, начинается с 'MD', уникальный.
             $input_name => ['required', 'string', 'size:24', new UpperCase, 'starts_with:MD'],
         ]);
 
+        # check if last 14 symbols of IBAN Code is unique in DB.
+        $unique_code = substr($request->code, -14);
         $ret = DB::table('iban_codes')
-            ->where('code', $request->code)
+            ->where('code', 'LIKE', '%' . $unique_code)
             ->first();
 
-        if(Str::endsWith(Route::currentRouteAction(), '@update') && $request->code == $ret->code)
-            return false;
+        # additional check for @update.
+        if($ret !== null)
+            if(Str::endsWith(Route::currentRouteAction(), '@update') && $request->code == $ret->code)
+                return false;
 
         return $ret;
     }
