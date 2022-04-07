@@ -6,15 +6,10 @@ use App\Models\EcoCode;
 use App\Models\IBAN;
 use App\Models\Locality;
 use App\Rules\UpperCase;
-use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Validator as IlluminateValidationValidator;
-use Nette\Utils\Validators;
-use Symfony\Component\HttpKernel\EventListener\ValidateRequestListener;
 
 class IBANController extends Controller
 {
