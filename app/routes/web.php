@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\APIController;
 use App\Http\Controllers\IBANController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::post('/php/ibanAPI.php', [APIController::class, 'main']);
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'auth.isAdmin'])->group(function () {
     Route::resource('/users', UserController::class);
