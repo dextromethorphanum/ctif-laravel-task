@@ -12,9 +12,9 @@ $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
 if(isset($_POST['getiban']))
 {
-    $data = json_decode(IBAN::where('eco_code', $_POST['eco'])->where('locality_code', $_POST['loc'])->select('code')->get(), true);
+    $data = IBAN::where('eco_code', $_POST['eco'])->where('locality_code', $_POST['loc'])->select('code')->first();
     if(!empty($data))
-        echo '<div class="success_iban">Codul IBAN: <div class="success_iban_code">' . $data[0]['code'] . '</div></div>';
+        echo '<div class="success_iban">Codul IBAN: <div class="success_iban_code">' . $data['code'] . '</div></div>';
     else echo '<div class="error_iban">Codul IBAN nu exista pentru datele care au fost selectate!</div>';
     exit;
 }
