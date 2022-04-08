@@ -196,12 +196,14 @@ a:hover {
 	padding: 35px 0;
 }
 
+.footer_blocks {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
 .footer_block {
-	vertical-align: top;
 	color: white;
-	display: inline-block;
-	float: center;
-	margin-right: 20px;
 	font: inherit;
 	width: 230px;
 }
